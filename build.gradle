@@ -9,6 +9,7 @@ plugins {
 ext {
 //	set('springCloudVersion', "2023.0.3") // 사용할 스프링 클라우드 버전 정의
 	set('springCloudVersion', "2022.0.4")
+	set('otelVersion', "1.33.3")
 }
 
 group = 'com.polarbookshop'
@@ -30,6 +31,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
 	runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
+	runtimeOnly "io.opentelemetry.javaagent:opentelemetry-javaagent:${otelVersion}"
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
